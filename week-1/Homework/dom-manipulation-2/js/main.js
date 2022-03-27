@@ -7,8 +7,9 @@ function forBlue() {
   findJumbotron.style.backgroundColor = "#588fbd";
   var findDonateBike = document.querySelector(".btn-primary.Btn-lrg");
   findDonateBike.style.backgroundColor = "#ffa500";
-var VolunteerButton = document.querySelector(".btn btn-secondary btn-lrg")
-VolunteerButton.style.backgroundColor = "green";
+let VolunteerButton = document.querySelector(".btn-secondary.Btn-lrg")
+VolunteerButton.style.backgroundColor = "black";
+VolunteerButton.style.color = "White"
  }
 
 
@@ -22,7 +23,12 @@ function forOrange() {
   findJumbotron.style.backgroundColor = "#f0ad4e";
   var findDonateBike = document.querySelector(".btn-primary.Btn-lrg");
   findDonateBike.style.backgroundColor = "#5751fd";
-}
+  let VolunteerButton = document.querySelector(".btn-secondary.Btn-lrg")
+VolunteerButton.style.backgroundColor = `#31b0d5`;
+VolunteerButton.style.color = "white"
+
+ }
+
 
 
 var alertGreenClick = document.querySelector("#greenBtn");
@@ -32,6 +38,8 @@ function forGreen() {
   findJumbotron.style.backgroundColor = "#87ca8a";
   var findDonateBike = document.querySelector(".btn-primary.Btn-lrg");
   findDonateBike.style.backgroundColor = "black";
+  let VolunteerButton = document.querySelector(".btn-secondary.Btn-lrg")
+  VolunteerButton.style.backgroundColor = `#8c9c08`;
 }
 
 
@@ -65,6 +73,7 @@ submitButton.addEventListener("click", function () {
   });
   if (allInputsValid) {
     alert("Thank you!");
+    
     allInputs.forEach(function (el) {
       el.value = "";
     });

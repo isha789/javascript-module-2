@@ -53,7 +53,7 @@ When a user clicks the ‘Add some text’ button, a new paragraph should be add
 var newText = document.querySelector("#addTextBtn");
 newText.addEventListener("click", newtextadd);
 function newtextadd() {
-  var placeToAdd = document.querySelector(".buttons");
+  var placeToAdd = document.querySelector("#mainArticles");
   var paragraph = document.createElement("p");
   paragraph.innerText = "LEARN MORE";
   placeToAdd.appendChild(paragraph);
@@ -72,7 +72,9 @@ largerLinksAdd.addEventListener("click", largeLinks);
 function largeLinks() {
   var linksToChange = document.querySelectorAll("a");
   for (var i = 0; i < linksToChange.length; i++) {
-    linksToChange[i].className = "biggerLinks";
+   // linksToChange[i].className = "biggerLinks";
+
+   linksToChange[i].style.fontSize= "x-Large"
   }
 }
 
@@ -85,6 +87,16 @@ When the 'Add' button is clicked, get the text inside the input field and create
 Also clear the text inside the input field
 */
 
+var newText = document.querySelector("#addArticleBtn");
+newText.addEventListener("click", newtextadd);
+function newtextadd() {
+  var placeToAdd = document.querySelector("#mainArticles");
+  var paragraph = document.createElement("p");
+  paragraph.innerText = document.getElementById("inputArea").value;
+  placeToAdd.appendChild(paragraph);
+  document.getElementById("inputArea").value = "";
+}
+
 
 /*
 Task 7
@@ -95,3 +107,18 @@ Using the same function in Task 3, every time the 'Change colour' button is clic
 The next color when you are in the last color of the array will be the first color again.
 */
 
+var i=0;
+var changeColor = document.querySelector("#bgrChangeBtn");
+changeColor.addEventListener("click", changeBackColor);
+function changeBackColor() {
+  document.body.style.backgroundColor = "colors";
+  
+    const colors = ["purple","green","red","blue","red"];
+    
+        document.body.style.backgroundColor = colors[i];
+        i++;
+    if(i>3){
+     return i=0;
+    }
+}
+  
