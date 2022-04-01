@@ -16,7 +16,8 @@ let house = {
 let newCurrentOwner = {
   firstName: "Georgina",
   lastName: "Hernandez",
-};
+  
+  }
 
 /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE

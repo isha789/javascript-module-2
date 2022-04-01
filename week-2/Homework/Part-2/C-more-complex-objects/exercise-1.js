@@ -20,6 +20,8 @@ let house = {
 */
 
 // - change the address of "house" to '51 Berkley Road'
+const x = house;
+x.address = "51 Berkley Road"; 
 // - change the previous owners of "house" to ["Brian M.", "Fiona S."]
 // - change the last name of the current owner of "house" to "Montgomery"
 

@@ -10,6 +10,10 @@ let person = {
     name: "Alice",
     age: 25,
   };
+
+  //greet("Alice")# =>"Hello" 
+  var genericGreet = function() { return "Hello, my name is " + this.name; }
+  
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE

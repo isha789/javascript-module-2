@@ -39,8 +39,19 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+ 
+ let personsYoungerThan28YearsOld = // Complete here
 
-let destinationNamesWithin500Kms = // Complete here
+ 
+
+
+
+function destinationNamesWithin500Kms(travelDestinations){
+    if (travelDestinations.distance< 500)
+    return travelDestinations
+}
+
+let destinationNamesWithin500Kms = travelDestinations.map(getDestination) // Complete here
 
 let destinationNameReachableByFerry = // Complete here
 
