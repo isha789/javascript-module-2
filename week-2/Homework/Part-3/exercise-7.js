@@ -49,17 +49,27 @@ var shoppingCart = {
   totalPrice: 0,
   selectedProducts: []
 };
+products.push(product1);
+products.push(product2);
 
 function addToShoppingCart(id){
-
+  shoppingCart.selectedProducts.push(products.filter((x) => x.id === id));
+  let arrToNumber = products.filter((x) => x.id === id).map((x) => x.price);
+  shoppingCart.totalPrice += arrToNumber[0];
 }
 
 function removeFromShoppingCart(id){
-
+  shoppingCart.selectedProducts.pop(products.filter((x) => x.id === id));
+  let arrToNumber = products.filter((x) => x.id === id).map((x) => x.price);
+  shoppingCart.totalPrice -= arrToNumber[0];
 }
 
 function shop(){
+  products.filter((x) => x.name === shoppingCart.selectedProducts[0][0].name)
+  .map((x) => (x.stock -= 1));
 
+shoppingCart.totalPrice = 0;
+shoppingCart.selectedProducts = [];
 }
 
 //results
@@ -88,3 +98,6 @@ console.log("Step 5");
 console.log("Total Price = " + shoppingCart.totalPrice);
 console.log("Number of Elements = " + shoppingCart.selectedProducts.length);
 console.log("Name of Elements = " + shoppingCart.selectedProducts.map(p=>p.name));
+
+// i have a problem while solving last part. unable to subtract from stocks properly . every time i run .map()
+//it enclose my array into another array that's why i used [0] repeatdly.

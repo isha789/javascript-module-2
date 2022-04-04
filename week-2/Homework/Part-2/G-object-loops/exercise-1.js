@@ -7,7 +7,23 @@ const studentGrades = {
     george: 17,
     abdul: 19,
   };
-  
+//   function getage(persons) {
+//     return persons.age < 28
+//     }
+//  let personsYoungerThan28YearsOld = persons.filter(getage)
+
+
+  findGrades: function studentGrades1(studentGrades){
+  if (studentGrades.grades < 18){
+  return studentGrades
+  }
+  }
+
+  let grades = this.filter
+  console.log(studentGrades)
   // Prints
   // TOM - 20
   // ABDUL - 19
+
+  // celebrateBirthday: function (){
+  //   this.age = this.age + 1;

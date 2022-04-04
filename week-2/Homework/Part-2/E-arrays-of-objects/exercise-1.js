@@ -32,19 +32,14 @@ function getname(person){
 }
 let personNames = persons.map(getname) // Complete here
 
-// function getName(kitten) {
-    // return kitten.name;
-//}
 
-//kittens.map(getName)
+
 function getage(persons) {
-    if(persons.age < 28){
-        return persons
-    }
-  
+    return persons.age < 28
+        
 }
- 
-let personsYoungerThan28YearsOld = persons.map(getage)// Complete here
+ let personsYoungerThan28YearsOld = persons.filter(getage)
+//let personsYoungerThan28YearsOld = persons.map(getage)// Complete here
 
 console.log(personsYoungerThan28YearsOld)
 /*
