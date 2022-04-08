@@ -60,8 +60,73 @@ var movies = [
 
 // create showMovies function
 
+//  function showMovies(movie){
+//    movies.forEach((movie)=>{
+//      const paragraph = document.createElement("p")
+//      paragraph.textContent = movie.title + " - " + movie.director;
+//      const allmovies = document.querySelector("#all-movies")
+//      allmovies.appendChild(paragraph)
+//    })
+//  }
+// var movienumber = document.getElementById("movies-number")
+// movieNumber.innerText = movies.length;
+//  setTimeout("showMovies",1000)
+
+  function showMovies(x) {
+   x.forEach(function (x) {
+     var paragraph = document.createElement("p");
+     paragraph.innerText = x.title + " :  " + x.director;
+     var movieDiv = document.getElementById("all-movies");
+     movieDiv.appendChild(paragraph);
+   });
+   var movieNumber = document.getElementById("movies-number");
+   movieNumber.innerText = movies.length;
+ }
+
+//setTimeout(showMovies, 1000);
 
 // create a new movie object for your favorite movie
 
 
-// create addMovies function
+newMovie = {
+  title :"myMovie",
+  director: "thomas",
+  type: "horror",
+  haveWatched: "true"
+}
+ function addMovie(x){
+ movies.push(x)
+ }
+ setTimeout(function () {
+   addMovie(newMovie);
+ }, 2000);
+  setTimeout(function () {
+   showMovies(movies);
+ }, 4000);
+//setTimeout("addMovie", 2000)
+
+
+
+
+
+
+let movieAdd = {};
+let newMovieArray = [];
+let saveButton = document.querySelector("button");
+saveButton.addEventListener("click", addData);
+function addData() {
+  movieAdd.title = document.getElementById("title").value;
+  movieAdd.director = document.getElementById("director").value;
+  movieAdd.type = document.getElementById("type").value;
+  movieAdd.haveWatched = document.getElementById("haveWatched").value;
+  newMovieArray[0] = movieAdd;
+
+  showMovies(newMovieArray);
+  var movieNumber = document.getElementById("movies-number");
+  let number = parseInt(movieNumber.innerText);
+  movieNumber.innerText = number + 1;
+}
+ 
+
+
+
