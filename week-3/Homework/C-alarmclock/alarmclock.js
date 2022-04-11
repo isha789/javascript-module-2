@@ -1,31 +1,24 @@
  
-   function setAlarm(addvalue) {
-    var addvalue = document.querySelector("#alarmSet").value
-   addvalue.addEventListener("click",addvalue) 
 
+
+
+  function setAlarm(){
+    let time = document.querySelector("#alarmSet").value;
+ const timeRemaining= document.querySelector("#timeRemaining")
+ timeRemaining.textContent="Time Remaining: 00:" + time;
+ const intervalId= setInterval(() =>{
+   time = time - 1;
+   timeRemaining.textContent="Time Remaining: 00:" + time;
+   console.log(time)
+   if(time === 0){
+     //console.log("CLEARED!")
+   clearInterval(intervalId)
+   playAlarm();
+}
+  },1000) 
   }
+  
 
-  function countRem()
-    if (addvalue< 0 ){
-      clearInterval(id);
-      playAlarm();
-  }
-
-//   function setAlarm() {
-//   var timeSet = document.getElementById("alarmSet").value;
-//   let ourVar = parseInt(timeSet);
-  //   function countRem() {
-  //     if (ourVar < 0) {
-  //       clearInterval(id);
-  //       playAlarm();
-  //     } else {
-  //       document.getElementById("timeRemaining").innerText =
-  //         "Time Remaining: 00:" + ourVar;
-  //       ourVar--;
-  //     }
-  //   }
-  //   var id = setInterval(countRem, 1000);
-  // }
 
 // DO NOT EDIT BELOW HERE
 
@@ -33,6 +26,7 @@ var audio = new Audio("alarmsound.mp3");
 
 function setup() {
   document.getElementById("set").addEventListener("click", () => {
+    //console.log("alarm set!")
     setAlarm();
   });
 
